@@ -15,7 +15,9 @@ import Foundation
 public enum InvalidItemBehaviour<T> {
   case remove
   case fail
+  // swiftlint:disable identifier_name rule
   case value(T)
+  // swiftlint:disable identifier_name rule
   case custom((DecodingError) -> InvalidItemBehaviour<T>)
 
   func decodeItem(decode: () throws -> T) throws -> T? {
